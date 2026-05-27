@@ -1,0 +1,33 @@
+# Ignore Python virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Large dataset files (YouTube CSVs are very large and should not be uploaded to GitHub)
+data/
+*.csv
+*.tsv
+*.parquet
+*.json.gz
+
+# IDE and OS specific files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# AWS credentials and local config (just in case they are stored locally)
+.aws/
+credentials
+*.pem
+*.aws
