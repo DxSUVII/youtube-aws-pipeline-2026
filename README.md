@@ -7,7 +7,7 @@
 ## Architecture Diagram
 
 ![YouTube Trending Data Pipeline Architecture](YouTube%20Trending%20Data%20Pipeline.png)
-https://github.com/darshilparmar/youtube-data-piepline-aws-s3-lambda-glue-athena-stepfunction/blob/main/YouTube%20Trending%20Data%20Pipeline.png
+(https://github.com/darshilparmar/youtube-data-piepline-aws-s3-lambda-glue-athena-stepfunction/blob/main/YouTube%20Trending%20Data%20Pipeline.png)
 
 ---
 
