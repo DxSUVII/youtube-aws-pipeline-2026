@@ -34,7 +34,7 @@ logger.setLevel(logging.INFO)
 
 # ── Config ───────────────────────────────────────────────────────────────────
 SILVER_BUCKET = os.environ["S3_BUCKET_SILVER"]
-GLUE_DB = os.environ.get("GLUE_DB_SILVER", "yt_pipeline_silver_dev")
+GLUE_DB = os.environ.get("GLUE_DB_SILVER") or os.environ.get("SILVER_DATABASE") or "yt_pipeline_silver_dev"
 GLUE_TABLE = os.environ.get("GLUE_TABLE_REFERENCE", "clean_reference_data")
 SNS_TOPIC = os.environ.get("SNS_ALERT_TOPIC_ARN", "")
 SILVER_PATH = f"s3://{SILVER_BUCKET}/youtube/reference_data/"
@@ -157,7 +157,7 @@ def lambda_handler(event, context):
 
         except Exception as e:
             logger.error(f"Error processing record: {e}", exc_info=True)
-            errors.append({"key": key if "key" in dir() else "unknown", "error": str(e)})
+            errors.append({"key": locals().get("key", "unknown"), "error": str(e)})
 
     # ── Summary ──────────────────────────────────────────────────────────
     if errors:

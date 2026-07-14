@@ -1,9 +1,22 @@
 Bronze bucket name  - yt-piepline-ap-south-bronze-dev
 silver bucket name = yt-piepline-ap-south-silver-dev
-gold layer name - yt-piepline-ap-south-bronze-dev
+gold layer name - yt-piepline-ap-south-gold-dev
 Script Bucket - yt-piepline-ap-south-scripts-dev
 
-SNS ARN -  arn:aws:sns:ap-south-1:916960894342:yt-data-pipeline-alerts
+GLUE_DB_BRONZE - yt_pipeline_broze_dev
+GLUE_DB_SILVER - yt_pipeline_silver_dev
+GLUE_DB_GOLD - yt_pipeline_gold_dev
+
+--bronze_database-yt_pipeline_broze_dev
+--bronze_table - raw_stastics
+--silver_bucket - yt-piepline-ap-south-silver-dev
+
+--silver_database: yt_pipeline_silver_dev
+--silver_table: clean_stastics
+--gold_bucket: yt-piepline-ap-south-gold-dev
+--gold_database:yt_pipeline_gold_dev
+
+SNS ARN -  arn:aws:sns:ap-south-1:916960894342:yt-data-pipeline-alerts_s
 
 Lambda conversion notes
 - The Lambda handler is added at [scripts/lambda_convert_to_parquet.py](scripts/lambda_convert_to_parquet.py#L1).
