@@ -7,6 +7,7 @@
 ## Architecture Diagram
 
 ![YouTube Trending Data Pipeline Architecture](YouTube%20Trending%20Data%20Pipeline.png)
+https://github.com/darshilparmar/youtube-data-piepline-aws-s3-lambda-glue-athena-stepfunction/blob/main/YouTube%20Trending%20Data%20Pipeline.png
 
 ---
 
@@ -64,6 +65,8 @@ Data Sources        Bronze (S3)          Silver (S3)         Quality Gate       
 
 Step Functions Orchestration:
 Ingestion ──▶ Wait ──▶ Silver transforms (parallel) ──▶ Data Quality ──▶ Gold aggregation ──▶ SNS notification
+<img width="906" height="327" alt="stepfunction" src="https://github.com/user-attachments/assets/56812061-8d45-4da5-92fd-198e086d8c1f" />
+
 ```
 
 ---
@@ -633,6 +636,4 @@ Every Lambda and Glue job should be verified independently (direct invocation, m
 
 ---
 
-## Author
 
-Built as a hands-on data engineering portfolio project following the [Darshil Parmar YouTube tutorial](https://github.com/darshilparmar/youtube-data-piepline-aws-s3-lambda-glue-athena-stepfunction), with a key divergence: replaced static Kaggle CSV ingestion with a live YouTube Data API v3 Lambda, which introduced all the production debugging challenges documented above.
